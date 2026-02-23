@@ -1,0 +1,1034 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Joe Back - Curriculum Vitae</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        @font-face {
+            font-family: 'Menlo';
+            src: local('Menlo'), local('Menlo-Regular');
+        }
+    </style>
+    <style>
+        :root {
+            --transition-speed: 0.3s;
+        }
+
+        /* ========== THEME: Professional Blue ========== */
+        .theme-professional {
+            --bg-primary: #f8fafc;
+            --bg-secondary: #ffffff;
+            --bg-accent: #e2e8f0;
+            --text-primary: #1e293b;
+            --text-secondary: #475569;
+            --text-muted: #64748b;
+            --accent-primary: #2563eb;
+            --accent-secondary: #3b82f6;
+            --accent-light: #dbeafe;
+            --border-color: #e2e8f0;
+            --shadow-color: rgba(37, 99, 235, 0.1);
+            --header-bg: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
+            --header-text: #ffffff;
+            --card-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --font-heading: 'Inter', sans-serif;
+            --font-body: 'Inter', sans-serif;
+        }
+
+        /* ========== THEME: Elegant Dark ========== */
+        .theme-dark {
+            --bg-primary: #0f172a;
+            --bg-secondary: #1e293b;
+            --bg-accent: #334155;
+            --text-primary: #f1f5f9;
+            --text-secondary: #cbd5e1;
+            --text-muted: #94a3b8;
+            --accent-primary: #a78bfa;
+            --accent-secondary: #c4b5fd;
+            --accent-light: rgba(167, 139, 250, 0.15);
+            --border-color: #334155;
+            --shadow-color: rgba(0, 0, 0, 0.3);
+            --header-bg: linear-gradient(135deg, #581c87 0%, #7c3aed 100%);
+            --header-text: #ffffff;
+            --card-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
+            --font-heading: 'Playfair Display', serif;
+            --font-body: 'Inter', sans-serif;
+        }
+
+        /* ========== THEME: Nature Green ========== */
+        .theme-nature {
+            --bg-primary: #f0fdf4;
+            --bg-secondary: #ffffff;
+            --bg-accent: #dcfce7;
+            --text-primary: #14532d;
+            --text-secondary: #166534;
+            --text-muted: #4d7c0f;
+            --accent-primary: #16a34a;
+            --accent-secondary: #22c55e;
+            --accent-light: #bbf7d0;
+            --border-color: #bbf7d0;
+            --shadow-color: rgba(22, 163, 74, 0.1);
+            --header-bg: linear-gradient(135deg, #14532d 0%, #16a34a 100%);
+            --header-text: #ffffff;
+            --card-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.07), 0 2px 4px -1px rgba(0, 0, 0, 0.04);
+            --font-heading: 'Inter', sans-serif;
+            --font-body: 'Inter', sans-serif;
+        }
+
+        /* ========== THEME: Nintendo DS ========== */
+        .theme-nintendo {
+            --bg-primary: #ffffff;
+            --bg-secondary: #c3c3c3;
+            --bg-accent: #000fe6;
+            --text-primary: #000000;
+            --text-secondary: #000000;
+            --text-muted: #000000;
+            --accent-primary: #ffffff;
+            --accent-secondary: #000fe6;
+            --accent-light: #000fe6;
+            --border-color: #6f6f6f;
+            --shadow-color: rgba(0, 0, 0, 0.2);
+            --header-bg: linear-gradient(180deg, #161695 0%, #16213e 100%);
+            --header-text: #ffffff;
+            --card-shadow: 4px 4px 0px #878787;
+            --font-heading: 'JetBrains Mono', monospace;
+            --font-body: 'JetBrains Mono', monospace;
+        }
+
+        .theme-nintendo .timeline-card,
+        .theme-nintendo .skill-card,
+        .theme-nintendo .summary {
+            border-radius: 4px;
+            border: 3px solid #545454;
+        }
+
+        .theme-nintendo .timeline-date {
+            border-radius: 4px;
+            font-family: 'JetBrains Mono', monospace;
+            text-transform: uppercase;
+            font-size: 0.75rem;
+        }
+
+        .theme-nintendo .avatar {
+            border-radius: 8px;
+            border: 4px solid #6c6c6c;
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        .theme-nintendo .theme-switcher {
+            border-radius: 4px;
+            border: 3px solid #5a5a5a;
+        }
+
+        .theme-nintendo .section-title::before {
+            border-radius: 0;
+        }
+
+        .theme-nintendo header::before {
+            background: repeating-linear-gradient(
+                0deg,
+                transparent,
+                transparent 2px,
+                rgba(255, 255, 255, 0.03) 2px,
+                rgba(255, 255, 255, 0.03) 4px
+            );
+            opacity: 1;
+        }
+
+        /* ========== THEME: Terminal/Hacker ========== */
+        .theme-terminal {
+            --bg-primary: #0a0a0a;
+            --bg-secondary: #111111;
+            --bg-accent: #1a1a1a;
+            --text-primary: #00ff00;
+            --text-secondary: #00cc00;
+            --text-muted: #009900;
+            --accent-primary: #00ff00;
+            --accent-secondary: #33ff33;
+            --accent-light: rgba(0, 255, 0, 0.1);
+            --border-color: #00ff00;
+            --shadow-color: rgba(0, 255, 0, 0.2);
+            --header-bg: linear-gradient(180deg, #0a0a0a 0%, #001a00 100%);
+            --header-text: #00ff00;
+            --card-shadow: 0 0 10px rgba(0, 255, 0, 0.3);
+            --font-heading: 'JetBrains Mono', monospace;
+            --font-body: 'JetBrains Mono', monospace;
+        }
+
+        .theme-terminal {
+            background-image: repeating-linear-gradient(
+                0deg,
+                transparent,
+                transparent 2px,
+                rgba(0, 255, 0, 0.03) 2px,
+                rgba(0, 255, 0, 0.03) 4px
+            );
+        }
+
+        .theme-terminal .timeline-card,
+        .theme-terminal .skill-card,
+        .theme-terminal .summary,
+        .theme-terminal .theme-switcher {
+            border: 1px solid #00ff00;
+            border-radius: 0;
+            background: rgba(0, 20, 0, 0.8);
+        }
+
+        .theme-terminal .timeline-card:hover,
+        .theme-terminal .skill-card:hover {
+            box-shadow: 0 0 20px rgba(0, 255, 0, 0.4), inset 0 0 20px rgba(0, 255, 0, 0.1);
+        }
+
+        .theme-terminal .avatar {
+            border-radius: 0;
+            border: 2px solid #00ff00;
+            background: #0a0a0a;
+            color: #00ff00;
+            box-shadow: 0 0 20px rgba(0, 255, 0, 0.5);
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        .theme-terminal .timeline-date {
+            border-radius: 0;
+            border: 1px solid #00ff00;
+            background: transparent;
+        }
+
+        .theme-terminal .section-title::before {
+            border-radius: 0;
+            box-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
+        }
+
+        .theme-terminal .highlight {
+            border-radius: 0;
+            border: 1px solid #00ff00;
+            background: transparent;
+        }
+
+        .theme-terminal header::before {
+            background: none;
+        }
+
+        .theme-terminal footer {
+            border-top: 1px solid #00ff00;
+            background: rgba(0, 20, 0, 0.8);
+        }
+
+        .theme-terminal .contact-item a:hover {
+            text-shadow: 0 0 10px #00ff00;
+        }
+
+        @keyframes terminalFlicker {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.98; }
+        }
+
+        .theme-terminal {
+            animation: terminalFlicker 0.1s infinite;
+        }
+
+        .theme-terminal .summary::before {
+            color: #00ff00;
+            content: '>';
+            font-size: 60px;
+        }
+
+        /* ========== THEME: Minimal Mono ========== */
+        .theme-mono {
+            --bg-primary: #000000;
+            --bg-secondary: #0a0a0a;
+            --bg-accent: #141414;
+            --text-primary: #e8e6e3;
+            --text-secondary: #c9c7c5;
+            --text-muted: #9a9895;
+            --accent-primary: #e8e6e3;
+            --accent-secondary: #c9c7c5;
+            --accent-light: rgba(232, 230, 227, 0.08);
+            --border-color: #2a2a2a;
+            --shadow-color: rgba(0, 0, 0, 0.5);
+            --header-bg: #000000;
+            --header-text: #e8e6e3;
+            --card-shadow: none;
+            --font-heading: 'Menlo', 'Monaco', 'Consolas', monospace;
+            --font-body: 'Menlo', 'Monaco', 'Consolas', monospace;
+        }
+
+        .theme-mono header::before {
+            background: none;
+        }
+
+        .theme-mono .timeline-card,
+        .theme-mono .skill-card,
+        .theme-mono .summary,
+        .theme-mono .theme-switcher {
+            border: 1px solid #2a2a2a;
+            border-radius: 0;
+            background: #0a0a0a;
+        }
+
+        .theme-mono .timeline-card:hover,
+        .theme-mono .skill-card:hover {
+            border-color: #3a3a3a;
+            box-shadow: none;
+            transform: none;
+        }
+
+        .theme-mono .avatar {
+            border-radius: 0;
+            border: 1px solid #2a2a2a;
+            box-shadow: none;
+        }
+
+        .theme-mono .timeline-date {
+            border-radius: 0;
+            background: transparent;
+            border: 1px solid #2a2a2a;
+            font-size: 0.8rem;
+        }
+
+        .theme-mono .section-title::before {
+            border-radius: 0;
+            background: #e8e6e3;
+        }
+
+        .theme-mono .highlight {
+            border-radius: 0;
+            background: transparent;
+            border-bottom: 1px solid #e8e6e3;
+            padding: 0 2px;
+        }
+
+        .theme-mono footer {
+            border-top: 1px solid #2a2a2a;
+            background: #000000;
+        }
+
+        .theme-mono .summary::before {
+            display: none;
+        }
+
+        .theme-mono .timeline-item::before {
+            border-radius: 0;
+            box-shadow: none;
+            border: 1px solid #e8e6e3;
+        }
+
+        .theme-mono .timeline::before {
+            background: #2a2a2a;
+        }
+
+        /* ========== BASE STYLES ========== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+            transition: background-color var(--transition-speed), color var(--transition-speed);
+        }
+
+        /* ========== THEME SWITCHER ========== */
+        .theme-switcher {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--bg-secondary);
+            padding: 10px 16px;
+            border-radius: 12px;
+            box-shadow: var(--card-shadow);
+            border: 1px solid var(--border-color);
+            transition: all var(--transition-speed);
+        }
+
+        .theme-switcher label {
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: var(--text-secondary);
+        }
+
+        .theme-switcher select {
+            padding: 8px 32px 8px 12px;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            font-family: var(--font-body);
+            font-size: 0.9rem;
+            cursor: pointer;
+            outline: none;
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23666' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 10px center;
+            transition: all var(--transition-speed);
+        }
+
+        .theme-switcher select:hover {
+            border-color: var(--accent-primary);
+        }
+
+        .theme-switcher select:focus {
+            border-color: var(--accent-primary);
+            box-shadow: 0 0 0 3px var(--accent-light);
+        }
+
+        /* ========== HEADER ========== */
+        header {
+            background: var(--header-bg);
+            color: var(--header-text);
+            padding: 80px 20px 60px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            opacity: 0.5;
+        }
+
+        .header-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .avatar {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            background: var(--header-text);
+            object-fit: cover;
+            margin: 0 auto 24px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+            border: 4px solid rgba(255, 255, 255, 0.3);
+        }
+
+        h1 {
+            font-family: var(--font-heading);
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+            letter-spacing: -0.02em;
+        }
+
+        .subtitle {
+            font-size: 1.25rem;
+            opacity: 0.9;
+            font-weight: 400;
+        }
+
+        .contact-bar {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 24px;
+            margin-top: 32px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.95rem;
+            opacity: 0.9;
+        }
+
+        .contact-item svg {
+            width: 18px;
+            height: 18px;
+            fill: currentColor;
+        }
+
+        .contact-item a {
+            color: inherit;
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.2s;
+        }
+
+        .contact-item a:hover {
+            border-bottom-color: currentColor;
+        }
+
+        /* ========== MAIN CONTENT ========== */
+        main {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px 80px;
+        }
+
+        /* ========== SUMMARY SECTION ========== */
+        .summary {
+            background: var(--bg-secondary);
+            border-radius: 16px;
+            padding: 32px;
+            margin-bottom: 40px;
+            box-shadow: var(--card-shadow);
+            border: 1px solid var(--border-color);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .summary::before {
+            content: '"';
+            position: absolute;
+            top: -20px;
+            left: 20px;
+            font-size: 120px;
+            font-family: var(--font-heading);
+            color: var(--accent-light);
+            line-height: 1;
+            pointer-events: none;
+        }
+
+        .summary p {
+            position: relative;
+            z-index: 1;
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            line-height: 1.8;
+            text-align: justify;
+        }
+
+        /* ========== SECTIONS ========== */
+        section {
+            margin-bottom: 48px;
+        }
+
+        .section-title {
+            font-family: var(--font-heading);
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 24px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .section-title::before {
+            content: '';
+            width: 4px;
+            height: 28px;
+            background: var(--accent-primary);
+            border-radius: 2px;
+        }
+
+        /* ========== SKILLS GRID ========== */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 16px;
+        }
+
+        .skill-card {
+            background: var(--bg-secondary);
+            border-radius: 12px;
+            padding: 20px;
+            border: 1px solid var(--border-color);
+            transition: all var(--transition-speed);
+        }
+
+        .skill-card:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--card-shadow);
+            border-color: var(--accent-secondary);
+        }
+
+        .skill-card h4 {
+            color: var(--accent-secondary);
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 8px;
+        }
+
+        .skill-card p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        /* ========== TIMELINE ========== */
+        .timeline {
+            position: relative;
+            padding-left: 32px;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: -10px;
+            top: 8px;
+            bottom: 8px;
+            width: 2px;
+            background: var(--border-color);
+            border-radius: 1px;
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 32px;
+            padding-bottom: 8px;
+        }
+
+        .timeline-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -30px;
+            top: 8px;
+            width: 12px;
+            height: 12px;
+            background: var(--accent-secondary);
+            border-radius: 50%;
+            border: 3px solid var(--bg-primary);
+            box-shadow: 0 0 0 2px var(--accent-secondary);
+        }
+
+        .timeline-card {
+            background: var(--bg-secondary);
+            border-radius: 12px;
+            padding: 24px;
+            border: 1px solid var(--border-color);
+            transition: all var(--transition-speed);
+        }
+
+        .timeline-card:hover {
+            box-shadow: var(--card-shadow);
+            border-color: var(--accent-light);
+        }
+
+        .timeline-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-bottom: 12px;
+        }
+
+        .timeline-title {
+            font-family: var(--font-heading);
+            font-size: 1.15rem;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .timeline-date {
+            font-size: 0.85rem;
+            color: var(--accent-primary);
+            font-weight: 500;
+            background: var(--accent-light);
+            padding: 4px 12px;
+            border-radius: 20px;
+            white-space: nowrap;
+        }
+
+        .timeline-subtitle {
+            font-size: 0.95rem;
+            color: var(--accent-secondary);
+            font-weight: 500;
+            margin-bottom: 8px;
+        }
+
+        .timeline-description {
+            font-size: 0.9rem;
+            color: var(--text-primary);
+            line-height: 1.7;
+        }
+
+        .timeline-description ul {
+            margin: 0;
+            padding-left: 35px;
+            font-size: 0.9rem;
+        }
+
+        .timeline-description li {
+            font-size: 0.9rem;
+        }
+
+        .highlight {
+            background: var(--accent-light);
+            color: var(--accent-primary);
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-weight: 500;
+            font-size: 0.85rem;
+        }
+
+        /* ========== FOOTER ========== */
+        footer {
+            text-align: center;
+            padding: 32px 20px;
+            background: var(--bg-secondary);
+            border-top: 1px solid var(--border-color);
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        /* ========== RESPONSIVE ========== */
+        @media (max-width: 768px) {
+            .theme-switcher {
+                top: 10px;
+                right: 10px;
+                padding: 8px 12px;
+            }
+
+            .theme-switcher label {
+                display: none;
+            }
+
+            header {
+                padding: 60px 20px 40px;
+            }
+
+            h1 {
+                font-size: 2.2rem;
+            }
+
+            .contact-bar {
+                flex-direction: column;
+                align-items: center;
+                gap: 12px;
+            }
+
+            .timeline {
+                padding-left: 24px;
+            }
+
+            .timeline-header {
+                flex-direction: column;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* ========== ANIMATIONS ========== */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-in {
+            animation: fadeInUp 0.5s ease-out forwards;
+        }
+
+        .delay-1 { animation-delay: 0.1s; opacity: 0; }
+        .delay-2 { animation-delay: 0.2s; opacity: 0; }
+        .delay-3 { animation-delay: 0.3s; opacity: 0; }
+        .delay-4 { animation-delay: 0.4s; opacity: 0; }
+        .delay-5 { animation-delay: 0.5s; opacity: 0; }
+    </style>
+</head>
+<body class="theme-nintendo">
+    <!-- Theme Switcher -->
+    <!-- <div class="theme-switcher">
+        <label for="theme-select">Theme:</label>
+        <select id="theme-select" onchange="changeTheme(this.value)">
+            <option value="theme-professional">🔵 Professional Blue</option>
+            <option value="theme-dark">🌙 Elegant Dark</option>
+            <option value="theme-nature">🌿 Nature Green</option>
+            <option value="theme-nintendo">🎮 Nintendo DS</option>
+            <option value="theme-terminal">💻 Terminal</option>
+            <option value="theme-mono">⬛ Minimal Mono</option>
+        </select>
+    </div> -->
+
+    <!-- Header -->
+    <header>
+        <div class="header-content">
+            <img src="joe_back.jpg" alt="Joe Back" class="avatar">
+            <h1>Joe Back</h1>
+            <p class="subtitle">Data Science & Statistics</p>
+            <div class="contact-bar">
+                <div class="contact-item">
+                    <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+                    <span>+49 176 / 28506325</span>
+                </div>
+                <div class="contact-item">
+                    <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                    <a href="mailto:joe.back@gmx.de">joe.back@gmx.de</a>
+                </div>
+                <div class="contact-item">
+                    <svg viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
+                    <a href="https://linkedin.com/in/joe-back" target="_blank">Joe Back</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Summary -->
+        <div class="summary animate-in delay-1">
+            <p>I am a Master's student in Statistics with a strong passion for data science and modern machine learning, combined with a solid foundation in business administration. I enjoy turning complex data into clear insights and thrive in collaborative environments, where open communication and shared problem-solving lead to the best results. Driven by curiosity and a strong desire to keep learning, I am motivated to apply analytical methods to real-world challenges and create solutions that have tangible impact. I am looking for a demanding yet rewarding role where I can contribute analytically day to day while growing alongside a team of like-minded, engaged, and social professionals.</p>
+        </div>
+
+        <!-- Skills Section -->
+        <section class="animate-in delay-2">
+            <h2 class="section-title">Skills & Expertise</h2>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <h4>Programming & Tools</h4>
+                    <p>Proficient in Python (Numpy, PyTorch), R, SQL and Docker. Basic understanding of Kubernetes.</p>
+                </div>
+                <div class="skill-card">
+                    <h4>Data Science & ML</h4>
+                    <p>Advanced academic experience in Statistics, Machine/Deep Learning (NLP, Transformers, Diffusion Models, Graphical Modelling).</p>
+                </div>
+                <div class="skill-card">
+                    <h4>Communication</h4>
+                    <p>Excellent communication skills with experience in collaborative and cross-functional environments.</p>
+                </div>
+                <div class="skill-card">
+                    <h4>Languages</h4>
+                    <p>Fluent in English and German (bilingual upbringing), Swedish at conversational level.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Education Section -->
+        <section class="animate-in delay-3">
+            <h2 class="section-title">Education</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-card">
+                        <div class="timeline-header">
+                            <div>
+                                <h3 class="timeline-title">M.Sc. Statistics</h3>
+                                <p class="timeline-subtitle">Joint Master's Programme – HU Berlin, TU Berlin, FU Berlin, Charité</p>
+                            </div>
+                            <span class="timeline-date">Sep 2023 – Apr 2026</span>
+                        </div>
+                        <p class="timeline-description">
+                            Fifth semester, <span class="highlight">Top 20%</span> in a very competitive programme at some of Germany's best Universities (4th best in Germany of 55 Universities via Times Higher Education Ranking). Current grade average: <span class="highlight">1.6</span>. Focus areas: Data Science, Statistical Inference.
+                        </p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-card">
+                        <div class="timeline-header">
+                            <div>
+                                <h3 class="timeline-title">B.Sc. Business Administration</h3>
+                                <p class="timeline-subtitle">University of Cologne</p>
+                            </div>
+                            <span class="timeline-date">Sep 2019 – Mar 2023</span>
+                        </div>
+                        <p class="timeline-description">
+                            Seven semesters, <span class="highlight">Top 3%</span> of the year. Grade average: <span class="highlight">1.3</span>. Bachelor thesis: "A Canonical Representation of Block Matrices with Application to Covariance and Correlation Matrices"
+                        </p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-card">
+                        <div class="timeline-header">
+                            <div>
+                                <h3 class="timeline-title">High School Diploma (Abitur)</h3>
+                                <p class="timeline-subtitle">Feudenheim Gymnasium, Mannheim</p>
+                            </div>
+                            <span class="timeline-date">Sep 2010 – Jun 2018</span>
+                        </div>
+                        <p class="timeline-description">
+                            Graduated with grade average <span class="highlight">1.6</span>. Advanced subjects: German, Mathematics, English, Chemistry, Geography.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Work Experience Section -->
+        <section class="animate-in delay-4">
+            <h2 class="section-title">Work Experience</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-card">
+                        <div class="timeline-header">
+                            <div>
+                                <h3 class="timeline-title">Joint Master's Thesis</h3>
+                                <p class="timeline-subtitle">FZI Research Center for Information Technology</p>
+                            </div>
+                            <span class="timeline-date">Oct 2025 – Present</span>
+                        </div>
+                        <p class="timeline-description">
+                            Title: "A Simultaneous Autoregressive Model for Composition-Valued Trajectory Data on Network Structures with Application to the Berlin Public Transport Network"
+                            <br><br>
+                            Combining network and graph theory with compositional data to build a Simultaneous Autoregressive Model that describes, predicts and identifies pain-points in the bus network of the Verkehrsbund Berlin Brandenburg.
+                        </p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-card">
+                        <div class="timeline-header">
+                            <div>
+                                <h3 class="timeline-title">Working Student – Strategy</h3>
+                                <p class="timeline-subtitle">Deutsche Bahn International Operations</p>
+                            </div>
+                            <span class="timeline-date">Oct 2023 – Present</span>
+                        </div>
+                        <p class="timeline-description">
+                                Preparation of audits and implementation of corporate strategy, running qualitative and quantitative data analyses to derive strategic recommendations, preparation of market entries as part of the business development team, setup and introduction of tool-supported process infrastructure
+                        </p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-card">
+                        <div class="timeline-header">
+                            <div>
+                                <h3 class="timeline-title">Internship – Division I A 3</h3>
+                                <p class="timeline-subtitle">Federal Ministry of Finance – Sustainability, Demography, Pension Systems</p>
+                            </div>
+                            <span class="timeline-date">Jul – Aug 2023</span>
+                        </div>
+                        <p class="timeline-description">
+                            Literature research on modern pension system topics, preparation of various official documents, insights into modern fiscal policy.
+                        </p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-card">
+                        <div class="timeline-header">
+                            <div>
+                                <h3 class="timeline-title">Internship – Strategy</h3>
+                                <p class="timeline-subtitle">Deutsche Bahn International Operations</p>
+                            </div>
+                            <span class="timeline-date">Jan – Jun 2023</span>
+                        </div>
+                        <p class="timeline-description">
+                            Preparation of audits, implementation of company strategy, setup and introduction of process infrastructure.
+                        </p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-card">
+                        <div class="timeline-header">
+                            <div>
+                                <h3 class="timeline-title">Student Research Assistant</h3>
+                                <p class="timeline-subtitle">Institute for Econometrics and Statistics, University of Cologne</p>
+                            </div>
+                            <span class="timeline-date">Sep 2020 – Jan 2023</span>
+                        </div>
+                        <p class="timeline-description">
+                            Support for professors, lecturers and PhD students in academic work and teaching (administrative tasks, research, website maintenance).
+                        </p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-card">
+                        <div class="timeline-header">
+                            <div>
+                                <h3 class="timeline-title">Contract Negotiator</h3>
+                                <p class="timeline-subtitle">Acquisition Services Ltd., Witham, England (Ford Motor Company Supplier)</p>
+                            </div>
+                            <span class="timeline-date">Jan – May 2019</span>
+                        </div>
+                        <p class="timeline-description">
+                            Full-time temporary position. Procurement of components for Ford within Europe.
+                        </p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-card">
+                        <div class="timeline-header">
+                            <div>
+                                <h3 class="timeline-title">Internship</h3>
+                                <p class="timeline-subtitle">Pöyry Deutschland GmbH (International Consulting & Engineering)</p>
+                            </div>
+                            <span class="timeline-date">Sep – Dec 2018</span>
+                        </div>
+                        <p class="timeline-description">
+                            Insights into finance, engineering, and legal departments.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- International Experience Section -->
+        <section class="animate-in delay-5">
+            <h2 class="section-title">International Experience</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-card">
+                        <div class="timeline-header">
+                            <div>
+                                <h3 class="timeline-title">Exchange Semester</h3>
+                                <p class="timeline-subtitle">Korea University Business School, Seoul, South Korea</p>
+                            </div>
+                            <span class="timeline-date">Aug 2021 – Feb 2022</span>
+                        </div>
+                        <p class="timeline-description">
+                            Participated in various courses recognized by the University of Cologne.
+                        </p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-card">
+                        <div class="timeline-header">
+                            <div>
+                                <h3 class="timeline-title">Student Exchange</h3>
+                                <p class="timeline-subtitle">World Foreign Language Middle School, Shanghai, China</p>
+                            </div>
+                            <span class="timeline-date">Oct 2014</span>
+                        </div>
+                        <p class="timeline-description">
+                            Two-week stay with a Chinese family attending school life, followed by a cultural trip to Hangzhou and Zhejiang Province.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2026 Joe Back • Last updated: February 22, 2026</p>
+    </footer>
+
+    <!-- JavaScript for Theme Switching -->
+    <!-- <script>
+        // Load saved theme from localStorage
+        document.addEventListener('DOMContentLoaded', function() {
+            const savedTheme = localStorage.getItem('cv-theme') || 'theme-professional';
+            document.body.className = savedTheme;
+            document.getElementById('theme-select').value = savedTheme;
+        });
+
+        // Change theme function
+        function changeTheme(theme) {
+            document.body.className = theme;
+            localStorage.setItem('cv-theme', theme);
+        }
+    </script> -->
+</body>
+</html>
