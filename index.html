@@ -237,7 +237,7 @@
         /* ========== THEME: Minimal Mono ========== */
         .theme-mono {
             --bg-primary: #000000;
-            --bg-secondary: #0a0a0a;
+            --bg-secondary: #181818;
             --bg-accent: #141414;
             --text-primary: #e8e6e3;
             --text-secondary: #c9c7c5;
@@ -331,6 +331,16 @@
             color: var(--text-primary);
             line-height: 1.6;
             transition: background-color var(--transition-speed), color var(--transition-speed);
+        }
+
+        /* ========== LINK STYLING ========== */
+        a {
+            color: var(--accent-secondary);
+            text-decoration: underline;
+        }
+
+        a:hover {
+            color: var(--accent-primary);
         }
 
         /* ========== THEME SWITCHER ========== */
@@ -548,9 +558,8 @@
         }
 
         .skill-card:hover {
-            transform: translateY(-2px);
-            box-shadow: var(--card-shadow);
-            border-color: var(--accent-secondary);
+            background: #141414;
+            border-color: #3a3a3a;
         }
 
         .skill-card h4 {
@@ -571,15 +580,15 @@
         /* ========== TIMELINE ========== */
         .timeline {
             position: relative;
-            padding-left: 32px;
+            padding-left: 20px;
         }
 
         .timeline::before {
             content: '';
             position: absolute;
-            left: -10px;
-            top: 8px;
-            bottom: 8px;
+            left: 0px;
+            top: 0px;
+            bottom: 0px;
             width: 2px;
             background: var(--border-color);
             border-radius: 1px;
@@ -595,7 +604,7 @@
             margin-bottom: 0;
         }
 
-        .timeline-item::before {
+        /* .timeline-item::before {
             content: '';
             position: absolute;
             left: -30px;
@@ -606,6 +615,10 @@
             border-radius: 50%;
             border: 3px solid var(--bg-primary);
             box-shadow: 0 0 0 2px var(--accent-secondary);
+        } */
+
+        .timeline-item::before {
+            display: none;
         }
 
         .timeline-card {
@@ -617,24 +630,39 @@
         }
 
         .timeline-card:hover {
-            box-shadow: var(--card-shadow);
-            border-color: var(--accent-light);
+            background: #141414;
+            border-color: #3a3a3a;
         }
 
         .timeline-header {
             display: flex;
             justify-content: space-between;
             align-items: flex-start;
-            flex-wrap: wrap;
-            gap: 12px;
-            margin-bottom: 12px;
+            flex-wrap: nowrap;  /* prevent wrapping */
         }
 
+        /* Title (Top Line) */
         .timeline-title {
             font-family: var(--font-heading);
             font-size: 1.15rem;
             font-weight: 600;
-            color: var(--text-primary);
+            color: #ffffff; /* pure white */
+            margin-bottom: 0px;
+        }
+
+        /* Company (Third Line - same size as title, medium gray) */
+        .timeline-company {
+            font-family: var(--font-heading);
+            font-size: 1.15rem;  /* same as title */
+            font-weight: 500;
+            color: #c9c7c5;  /* lighter gray than location */
+            margin-top: 2px;
+        }
+        /* Location (Second Line - smallest & darkest) */
+        .timeline-location {
+            font-size: 0.85rem;
+            color: #9a9895;  /* darker gray */
+            margin: 2px 0;
         }
 
         .timeline-date {
@@ -645,6 +673,7 @@
             padding: 4px 12px;
             border-radius: 20px;
             white-space: nowrap;
+            flex-shrink: 0; /* prevent shrinking on small screens */
         }
 
         .timeline-subtitle {
@@ -668,13 +697,6 @@
 
         .timeline-description li {
             font-size: 0.9rem;
-        }
-        
-        .timeline-location {
-            font-size: 0.9rem;
-            color: #b0b0b0;   /* slightly darker gray than text-muted */
-            font-weight: 500;
-            margin-top: 2px;
         }
 
         .highlight {
@@ -733,6 +755,121 @@
             .skills-grid {
                 grid-template-columns: 1fr;
             }
+        }
+
+        /* ===== Modern Skill Section ===== */
+
+        .skills-level {
+            font-size: 0.9rem;
+            margin: 20px 0 10px 0;
+            color: var(--text-muted);
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .skills-grid-modern {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .skill-pill {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 14px;
+            border: 1px solid var(--border-color);
+            background: var(--bg-secondary);
+            border-radius: 6px;
+            transition: all 0.2s ease;
+            font-size: 0.9rem;
+        }
+
+        .skill-pill img {
+            width: 18px;
+            height: 18px;
+        }
+
+        .skill-pill:hover {
+            background: #141414;
+            border-color: #3a3a3a;
+        }
+
+        /* ===== Languages Section ===== */
+
+        .languages-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 14px;
+        }
+
+        .language-card {
+            display: flex;
+            flex-direction: column;
+            padding: 14px 18px;
+            border: 1px solid var(--border-color);
+            background: var(--bg-secondary);
+            border-radius: 6px;
+            min-width: 150px;
+            transition: all 0.2s ease;
+        }
+
+        .language-card:hover {
+            background: #141414;
+            border-color: #3a3a3a;
+        }
+
+        .language-name {
+            font-weight: 600;
+            font-size: 0.95rem;
+            color: var(--text-primary);
+        }
+
+        .language-level {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-top: 4px;
+        }
+
+        /* ===== Advanced Academic Skills ===== */
+
+        .skills-grid-advanced {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 18px;
+            margin-top: 10px;
+        }
+
+        .skill-card-advanced {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            padding: 16px 18px;
+            transition: all 0.2s ease;
+        }
+
+        .skill-card-advanced:hover {
+            background: #141414;
+            border-color: #3a3a3a;
+            transform: translateY(-2px);
+        }
+
+        .skill-card-advanced h4 {
+            font-size: 1rem;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .skill-card-advanced ul {
+            padding-left: 18px;
+            margin: 0;
+        }
+
+        .skill-card-advanced li {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-bottom: 4px;
         }
 
         /* ========== ANIMATIONS ========== */
@@ -799,28 +936,104 @@
     <main>
         <!-- Summary -->
         <div class="summary animate-in delay-1">
-            <p>I am a Master's student in Statistics with a strong passion for data science and modern machine learning, combined with a solid foundation in business administration. I enjoy turning complex data into clear insights and thrive in collaborative environments, where open communication and shared problem-solving lead to the best results. Driven by curiosity and a strong desire to keep learning, I am motivated to apply analytical methods to real-world challenges and create solutions that have tangible impact. I am looking for a demanding yet rewarding role where I can contribute analytically day to day while growing alongside a team of like-minded, engaged, and social professionals.</p>
+            <p>I am a Master's student in Statistics with a strong passion for data science and modern machine learning, combined with a solid foundation in business administration. I enjoy turning complex data into clear insights and thrive in collaborative environments, where open communication and shared problem-solving lead to the best results. Driven by curiosity and a strong desire to keep learning, I am motivated to apply analytical methods to real-world challenges and create solutions that have tangible impact. I am looking for a demanding yet rewarding role where I can contribute analytically day to day while growing alongside a team of like-minded and engaged professionals.</p>
         </div>
 
         <!-- Skills Section -->
         <section class="animate-in delay-2">
-            <h2 class="section-title">Skills & Expertise</h2>
-            <div class="skills-grid">
-                <div class="skill-card">
-                    <h4>Programming & Tools</h4>
-                    <p>Proficient in Python (Numpy, PyTorch), R, SQL and Docker. Basic understanding of Kubernetes.</p>
+            <h2 class="section-title">Skills</h2>
+
+            <div class="skills-block">
+
+                <h3 class="skills-level">Advanced Academic Experience</h3>
+                <div class="skills-grid-advanced">
+
+                    <div class="skill-card-advanced">
+                        <h4>Statistics</h4>
+                        <ul>
+                            <li>Statistical Inference</li>
+                            <li>Stochastics</li>
+                            <li>Statistical Learning</li>
+                        </ul>
+                    </div>
+
+                    <div class="skill-card-advanced">
+                        <h4>Data Science</h4>
+                        <ul>
+                            <li>Data Analysis</li>
+                            <li>Probabilistic Relational Databases</li>
+                        </ul>
+                    </div>
+
+                    <div class="skill-card-advanced">
+                        <h4>Machine / Deep Learning</h4>
+                        <ul>
+                            <li>Natural Language Processing</li>
+                            <li>Transformers</li>
+                            <li>Diffusion Models</li>
+                            <li>Tree-based Models</li>
+                        </ul>
+                    </div>
+
                 </div>
-                <div class="skill-card">
-                    <h4>Data Science & ML</h4>
-                    <p>Advanced academic experience in Statistics, Machine/Deep Learning (NLP, Transformers, Diffusion Models, Graphical Modelling).</p>
+
+                <h3 class="skills-level">Proficient</h3>
+                <div class="skills-grid-modern">
+                    <div class="skill-pill">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg">
+                        <span>Python</span>
+                    </div>
+                    <div class="skill-pill">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/r/r-original.svg">
+                        <span>R</span>
+                    </div>
+                    <div class="skill-pill">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pytorch/pytorch-original.svg">
+                        <span>PyTorch</span>
+                    </div>
+                    <div class="skill-pill">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg">
+                        <span>TensorFlow</span>
+                    </div>
+                    <div class="skill-pill">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sqlite/sqlite-original.svg">
+                        <span>SQL</span>
+                    </div>
                 </div>
-                <div class="skill-card">
-                    <h4>Communication</h4>
-                    <p>Excellent communication skills with experience in collaborative and cross-functional environments.</p>
+
+                <h3 class="skills-level">Familiar</h3>
+                <div class="skills-grid-modern">
+                    
+                    <div class="skill-pill">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg">
+                        <span>Docker</span>
+                    </div>
+                    <div class="skill-pill">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kubernetes/kubernetes-plain.svg">
+                        <span>Kubernetes</span>
+                    </div>
                 </div>
-                <div class="skill-card">
-                    <h4>Languages</h4>
-                    <p>Fluent in English and German (bilingual upbringing), Swedish at conversational level.</p>
+
+            </div>
+        </section>
+
+        <section class="animate-in delay-2">
+            <h2 class="section-title">Languages</h2>
+
+            <div class="languages-grid">
+                <div class="language-card">
+                    <span class="language-name">German</span>
+                    <span class="language-level">Native</span>
+                </div>
+
+                <div class="language-card">
+                    <span class="language-name">English</span>
+                    <span class="language-level">Native</span>
+                </div>
+
+                <div class="language-card">
+                    <span class="language-name">Swedish</span>
+                    <span class="language-level">Conversational (B1)</span>
                 </div>
             </div>
         </section>
@@ -835,14 +1048,17 @@
                         <div class="timeline-header">
                             <div>
                                 <h3 class="timeline-title">M.Sc. Statistics</h3>
-                                <p class="timeline-subtitle">Joint Master's Programme – HU Berlin, TU Berlin, FU Berlin, Charité</p>
+                                <p class="timeline-company">Joint Master's Programme – HU Berlin, TU Berlin, FU Berlin, Charité</p>
+                                <p class="timeline-location">Berlin, Germany</p>
                             </div>
                             <span class="timeline-date">Sep 2023 – Apr 2026</span>
                         </div>
                         <div class="timeline-description">
                             <ul>
-                                <li>Top 20% in a highly competitive programme</li>
-                                <li>Ranked 4th best in Germany (Times Higher Education Ranking)</li>
+                                <li>Top 20% in a highly competitive programme at one of Germany's best universities 
+                                    (Ranked 4<sup>th</sup> best in Germany of 55 universities according to 
+                                    <a href="https://www.timeshighereducation.com/" target="_blank">
+                                        <u><em>Times Higher Education</em> Ranking</u></a>)</li>
                                 <li>Current grade average: 1.6</li>
                                 <li>Focus areas: Data Science, Statistical Inference</li>
                             </ul>
@@ -855,21 +1071,21 @@
                         <div class="timeline-header">
                             <div>
                                 <h3 class="timeline-title">B.Sc. Business Administration</h3>
-                                <p class="timeline-subtitle">University of Cologne</p>
+                                <p class="timeline-company">University of Cologne</p>
+                                <p class="timeline-location">Cologne, Germany</p>
                             </div>
                             <span class="timeline-date">Sep 2019 – Mar 2023</span>
                         </div>
                         <div class="timeline-description">
                             <ul>
-                                <li>Top 3% of the year</li>
-                                <li>Grade average: 1.3</li>
-                                <li>Bachelor thesis: "A Canonical Representation of Block Matrices with Application to Covariance and Correlation Matrices"</li>
+                                <li>Graduated in the top 3% with grade average: 1.3</li>
+                                <li>Bachelor thesis: <a href="https://www.linkedin.com/in/joe-back-55757b177/overlay/1750845461413/single-media-viewer/?type=DOCUMENT&profileId=ACoAACnosFMBOqgySDPmaVfv9FEDfHuJsFTrYhw" target="_blank">"A Canonical Representation of Block Matrices with Application to Covariance and Correlation Matrices"</a></li>
                             </ul>
                         </div>
                     </div>
                 </div>
 
-                <div class="timeline-item">
+                <!-- <div class="timeline-item">
                     <div class="timeline-card">
                         <div class="timeline-header">
                             <div>
@@ -885,7 +1101,7 @@
                             </ul>
                         </div>
                     </div>
-                </div>
+                </div> -->
 
             </div>
         </section>
@@ -899,16 +1115,17 @@
                     <div class="timeline-card">
                         <div class="timeline-header">
                             <div>
-                                <h3 class="timeline-title">Joint Master's Thesis – FZI Research Center</h3>
+                                <h3 class="timeline-title">Joint Master's Thesis</h3>
+                                <p class="timeline-company">FZI Research Center for Information Technology</p>
                                 <p class="timeline-location">Berlin, Germany</p>
                             </div>
                             <span class="timeline-date">Oct 2025 – Present</span>
                         </div>
                         <div class="timeline-description">
                             <ul>
-                                <li>Title: Simultaneous Autoregressive Model for composition-valued trajectory data on network structures</li>
-                                <li>Combining network theory and compositional data</li>
-                                <li>Application to Berlin public transport network</li>
+                                <li>Title: "Simultaneous Autoregressive Model for composition-valued trajectory data on network structures"</li>
+                                <li>Combining network and graph theory with compositional data to build a Spatial Autoregressive Model that describes, predicts and identifies pain-points in the bus network of the Verkehrsbund Berlin Brandenburg
+                                <li>Testing model power and robustness with simulation studies</li>
                             </ul>
                         </div>
                     </div>
@@ -918,7 +1135,8 @@
                     <div class="timeline-card">
                         <div class="timeline-header">
                             <div>
-                                <h3 class="timeline-title">Working Student – Deutsche Bahn International Operations (Strategy)</h3>
+                                <h3 class="timeline-title">Working Student – Business Development and Strategy</h3>
+                                <p class="timeline-company">Deutsche Bahn International Operations</p>
                                 <p class="timeline-location">Berlin, Germany</p>
                             </div>
                             <span class="timeline-date">Oct 2023 – Present</span>
@@ -927,9 +1145,8 @@
                             <ul>
                                 <li>Prepared business process audits</li>
                                 <li>Prepared market entries (Vietnam, India, US)</li>
-                                <li>Implemented corporate strategy initiatives</li>
                                 <li>Ran qualitative and quantitative data analyses</li>
-                                <li>Introduced tool-supported process infrastructure</li>
+                                <li>Updated tool-supported process infrastructure for audits</li>
                             </ul>
                         </div>
                     </div>
@@ -939,7 +1156,8 @@
                     <div class="timeline-card">
                         <div class="timeline-header">
                             <div>
-                                <h3 class="timeline-title">Internship – Federal Ministry of Finance</h3>
+                                <h3 class="timeline-title">Internship – Fiscal Sustainability, Demography, Pension Systems</h3>
+                                <p class="timeline-company">Federal Ministry of Financy Division, I A 3</p>
                                 <p class="timeline-location">Berlin, Germany</p>
                             </div>
                             <span class="timeline-date">Jul – Aug 2023</span>
@@ -959,15 +1177,16 @@
                         <div class="timeline-header">
                             <div>
                                 <h3 class="timeline-title">Internship – Strategy</h3>
-                                <p class="timeline-location">Deutsche Bahn International Operations · Berlin, Germany</p>
+                                <p class="timeline-company">Deutsche Bahn International Operations</p>
+                                <p class="timeline-location">Berlin, Germany</p>
                             </div>
                             <span class="timeline-date">Jan 2023 – Jun 2023</span>
                         </div>
                         <div class="timeline-description">
                             <ul>
                                 <li>Prepared business process audits</li>
-                                <li>Supported implementation of corporate strategy</li>
-                                <li>Contributed to setup and introduction of process infrastructure</li>
+                                <li>Implemented corporate strategy</li>
+                                <li>Set up new company process infrastructure and rolled out process intelligence platform</li>
                             </ul>
                         </div>
                     </div>
@@ -978,7 +1197,8 @@
                         <div class="timeline-header">
                             <div>
                                 <h3 class="timeline-title">Student Research Assistant</h3>
-                                <p class="timeline-location">Institute for Econometrics and Statistics · University of Cologne · Cologne, Germany</p>
+                                <p class="timeline-company">University of Cologne, Institute for Econometrics and Statistics</p>
+                                <p class="timeline-location">Cologne, Germany</p>
                             </div>
                             <span class="timeline-date">Sep 2020 – Jan 2023</span>
                         </div>
@@ -998,7 +1218,8 @@
                         <div class="timeline-header">
                             <div>
                                 <h3 class="timeline-title">Contract Negotiator</h3>
-                                <p class="timeline-location">Acquisition Services Ltd. (Ford Motor Company Supplier) · Witham, England</p>
+                                <p class="timeline-company">Acquisition Services Ltd. (Ford Motor Company Supplier)</p>
+                                <p class="timeline-location">Witham, England</p>
                             </div>
                             <span class="timeline-date">Jan 2019 – May 2019</span>
                         </div>
@@ -1016,7 +1237,8 @@
                         <div class="timeline-header">
                             <div>
                                 <h3 class="timeline-title">Internship</h3>
-                                <p class="timeline-location">Pöyry Deutschland GmbH · Germany</p>
+                                <p class="timeline-company">Pöyry Deutschland GmbH</p>
+                                <p class="timeline-location">Mannheim, Germany</p>
                             </div>
                             <span class="timeline-date">Sep 2018 – Dec 2018</span>
                         </div>
@@ -1039,7 +1261,8 @@
                         <div class="timeline-header">
                             <div>
                                 <h3 class="timeline-title">Exchange Semester</h3>
-                                <p class="timeline-location">Korea University Business School · Seoul, South Korea</p>
+                                <p class="timeline-company">Korea University Business School</p>
+                                <p class="timeline-location">Seoul, South Korea</p>
                             </div>
                             <span class="timeline-date">Aug 2021 – Feb 2022</span>
                         </div>
@@ -1056,7 +1279,8 @@
                         <div class="timeline-header">
                             <div>
                                 <h3 class="timeline-title">Student Exchange</h3>
-                                <p class="timeline-location">World Foreign Language Middle School · Shanghai, China</p>
+                                <p class="timeline-company">World Foreign Language Middle School</p>
+                                <p class="timeline-location">Shanghai, China</p>
                             </div>
                             <span class="timeline-date">Oct 2014 (2 weeks)</span>
                         </div>
