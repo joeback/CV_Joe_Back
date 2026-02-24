@@ -669,6 +669,13 @@
         .timeline-description li {
             font-size: 0.9rem;
         }
+        
+        .timeline-location {
+            font-size: 0.9rem;
+            color: #b0b0b0;   /* slightly darker gray than text-muted */
+            font-weight: 500;
+            margin-top: 2px;
+        }
 
         .highlight {
             background: var(--accent-light);
@@ -751,7 +758,7 @@
         .delay-5 { animation-delay: 0.5s; opacity: 0; }
     </style>
 </head>
-<body class="theme-nintendo">
+<body class="theme-mono">
     <!-- Theme Switcher -->
     <!-- <div class="theme-switcher">
         <label for="theme-select">Theme:</label>
@@ -818,10 +825,11 @@
             </div>
         </section>
 
-        <!-- Education Section -->
+        <!-- Education -->
         <section class="animate-in delay-3">
             <h2 class="section-title">Education</h2>
             <div class="timeline">
+
                 <div class="timeline-item">
                     <div class="timeline-card">
                         <div class="timeline-header">
@@ -831,11 +839,17 @@
                             </div>
                             <span class="timeline-date">Sep 2023 – Apr 2026</span>
                         </div>
-                        <p class="timeline-description">
-                            Fifth semester, <span class="highlight">Top 20%</span> in a very competitive programme at some of Germany's best Universities (4th best in Germany of 55 Universities via Times Higher Education Ranking). Current grade average: <span class="highlight">1.6</span>. Focus areas: Data Science, Statistical Inference.
-                        </p>
+                        <div class="timeline-description">
+                            <ul>
+                                <li>Top 20% in a highly competitive programme</li>
+                                <li>Ranked 4th best in Germany (Times Higher Education Ranking)</li>
+                                <li>Current grade average: 1.6</li>
+                                <li>Focus areas: Data Science, Statistical Inference</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
+
                 <div class="timeline-item">
                     <div class="timeline-card">
                         <div class="timeline-header">
@@ -845,11 +859,16 @@
                             </div>
                             <span class="timeline-date">Sep 2019 – Mar 2023</span>
                         </div>
-                        <p class="timeline-description">
-                            Seven semesters, <span class="highlight">Top 3%</span> of the year. Grade average: <span class="highlight">1.3</span>. Bachelor thesis: "A Canonical Representation of Block Matrices with Application to Covariance and Correlation Matrices"
-                        </p>
+                        <div class="timeline-description">
+                            <ul>
+                                <li>Top 3% of the year</li>
+                                <li>Grade average: 1.3</li>
+                                <li>Bachelor thesis: "A Canonical Representation of Block Matrices with Application to Covariance and Correlation Matrices"</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
+
                 <div class="timeline-item">
                     <div class="timeline-card">
                         <div class="timeline-header">
@@ -859,60 +878,80 @@
                             </div>
                             <span class="timeline-date">Sep 2010 – Jun 2018</span>
                         </div>
-                        <p class="timeline-description">
-                            Graduated with grade average <span class="highlight">1.6</span>. Advanced subjects: German, Mathematics, English, Chemistry, Geography.
-                        </p>
+                        <div class="timeline-description">
+                            <ul>
+                                <li>Grade average: 1.6</li>
+                                <li>Advanced subjects: German, Mathematics, English, Chemistry, Geography</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
+
             </div>
         </section>
 
-        <!-- Work Experience Section -->
+        <!-- Work Experience -->
         <section class="animate-in delay-4">
             <h2 class="section-title">Work Experience</h2>
             <div class="timeline">
+
                 <div class="timeline-item">
                     <div class="timeline-card">
                         <div class="timeline-header">
                             <div>
-                                <h3 class="timeline-title">Joint Master's Thesis</h3>
-                                <p class="timeline-subtitle">FZI Research Center for Information Technology</p>
+                                <h3 class="timeline-title">Joint Master's Thesis – FZI Research Center</h3>
+                                <p class="timeline-location">Berlin, Germany</p>
                             </div>
                             <span class="timeline-date">Oct 2025 – Present</span>
                         </div>
-                        <p class="timeline-description">
-                            Title: "A Simultaneous Autoregressive Model for Composition-Valued Trajectory Data on Network Structures with Application to the Berlin Public Transport Network"
-                            <br><br>
-                            Combining network and graph theory with compositional data to build a Simultaneous Autoregressive Model that describes, predicts and identifies pain-points in the bus network of the Verkehrsbund Berlin Brandenburg.
-                        </p>
+                        <div class="timeline-description">
+                            <ul>
+                                <li>Title: Simultaneous Autoregressive Model for composition-valued trajectory data on network structures</li>
+                                <li>Combining network theory and compositional data</li>
+                                <li>Application to Berlin public transport network</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
+
                 <div class="timeline-item">
                     <div class="timeline-card">
                         <div class="timeline-header">
                             <div>
-                                <h3 class="timeline-title">Working Student – Strategy</h3>
-                                <p class="timeline-subtitle">Deutsche Bahn International Operations</p>
+                                <h3 class="timeline-title">Working Student – Deutsche Bahn International Operations (Strategy)</h3>
+                                <p class="timeline-location">Berlin, Germany</p>
                             </div>
                             <span class="timeline-date">Oct 2023 – Present</span>
                         </div>
-                        <p class="timeline-description">
-                                Preparation of audits and implementation of corporate strategy, running qualitative and quantitative data analyses to derive strategic recommendations, preparation of market entries as part of the business development team, setup and introduction of tool-supported process infrastructure
-                        </p>
+                        <div class="timeline-description">
+                            <ul>
+                                <li>Prepared business process audits</li>
+                                <li>Prepared market entries (Vietnam, India, US)</li>
+                                <li>Implemented corporate strategy initiatives</li>
+                                <li>Ran qualitative and quantitative data analyses</li>
+                                <li>Introduced tool-supported process infrastructure</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
+
                 <div class="timeline-item">
                     <div class="timeline-card">
                         <div class="timeline-header">
                             <div>
-                                <h3 class="timeline-title">Internship – Division I A 3</h3>
-                                <p class="timeline-subtitle">Federal Ministry of Finance – Sustainability, Demography, Pension Systems</p>
+                                <h3 class="timeline-title">Internship – Federal Ministry of Finance</h3>
+                                <p class="timeline-location">Berlin, Germany</p>
                             </div>
                             <span class="timeline-date">Jul – Aug 2023</span>
                         </div>
-                        <p class="timeline-description">
-                            Literature research on modern pension system topics, preparation of various official documents, insights into modern fiscal policy.
-                        </p>
+                        <div class="timeline-description">
+                            <ul>
+                                <li>Prepared policy frameworks for equity-based pensions</li>
+                                <li>Conducted literature research on pension systems</li>
+                                <li>Worked on fiscal sustainability and subsidy reports</li>
+                                <li>Gained insights into fiscal policy-making</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
                 <div class="timeline-item">
@@ -920,99 +959,124 @@
                         <div class="timeline-header">
                             <div>
                                 <h3 class="timeline-title">Internship – Strategy</h3>
-                                <p class="timeline-subtitle">Deutsche Bahn International Operations</p>
+                                <p class="timeline-location">Deutsche Bahn International Operations · Berlin, Germany</p>
                             </div>
-                            <span class="timeline-date">Jan – Jun 2023</span>
+                            <span class="timeline-date">Jan 2023 – Jun 2023</span>
                         </div>
-                        <p class="timeline-description">
-                            Preparation of audits, implementation of company strategy, setup and introduction of process infrastructure.
-                        </p>
+                        <div class="timeline-description">
+                            <ul>
+                                <li>Prepared business process audits</li>
+                                <li>Supported implementation of corporate strategy</li>
+                                <li>Contributed to setup and introduction of process infrastructure</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
+
                 <div class="timeline-item">
                     <div class="timeline-card">
                         <div class="timeline-header">
                             <div>
                                 <h3 class="timeline-title">Student Research Assistant</h3>
-                                <p class="timeline-subtitle">Institute for Econometrics and Statistics, University of Cologne</p>
+                                <p class="timeline-location">Institute for Econometrics and Statistics · University of Cologne · Cologne, Germany</p>
                             </div>
                             <span class="timeline-date">Sep 2020 – Jan 2023</span>
                         </div>
-                        <p class="timeline-description">
-                            Support for professors, lecturers and PhD students in academic work and teaching (administrative tasks, research, website maintenance).
-                        </p>
+                        <div class="timeline-description">
+                            <ul>
+                                <li>Supported professors, lecturers and PhD students in research and teaching</li>
+                                <li>Course administration and academic coordination</li>
+                                <li>Literature research and empirical testing</li>
+                                <li>Maintained and updated institute website</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
+
                 <div class="timeline-item">
                     <div class="timeline-card">
                         <div class="timeline-header">
                             <div>
                                 <h3 class="timeline-title">Contract Negotiator</h3>
-                                <p class="timeline-subtitle">Acquisition Services Ltd., Witham, England (Ford Motor Company Supplier)</p>
+                                <p class="timeline-location">Acquisition Services Ltd. (Ford Motor Company Supplier) · Witham, England</p>
                             </div>
-                            <span class="timeline-date">Jan – May 2019</span>
+                            <span class="timeline-date">Jan 2019 – May 2019</span>
                         </div>
-                        <p class="timeline-description">
-                            Full-time temporary position. Procurement of components for Ford within Europe.
-                        </p>
+                        <div class="timeline-description">
+                            <ul>
+                                <li>Procured manufacturing components for Ford Motor Company within Europe</li>
+                                <li>Full-time temporary position in international supplier environment</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
+
                 <div class="timeline-item">
                     <div class="timeline-card">
                         <div class="timeline-header">
                             <div>
                                 <h3 class="timeline-title">Internship</h3>
-                                <p class="timeline-subtitle">Pöyry Deutschland GmbH (International Consulting & Engineering)</p>
+                                <p class="timeline-location">Pöyry Deutschland GmbH · Germany</p>
                             </div>
-                            <span class="timeline-date">Sep – Dec 2018</span>
+                            <span class="timeline-date">Sep 2018 – Dec 2018</span>
                         </div>
-                        <p class="timeline-description">
-                            Insights into finance, engineering, and legal departments.
-                        </p>
+                        <div class="timeline-description">
+                            <ul>
+                                <li>Gained insights into finance, engineering and legal departments</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
-
-        <!-- International Experience Section -->
+            
         <section class="animate-in delay-5">
             <h2 class="section-title">International Experience</h2>
             <div class="timeline">
+
                 <div class="timeline-item">
                     <div class="timeline-card">
                         <div class="timeline-header">
                             <div>
                                 <h3 class="timeline-title">Exchange Semester</h3>
-                                <p class="timeline-subtitle">Korea University Business School, Seoul, South Korea</p>
+                                <p class="timeline-location">Korea University Business School · Seoul, South Korea</p>
                             </div>
                             <span class="timeline-date">Aug 2021 – Feb 2022</span>
                         </div>
-                        <p class="timeline-description">
-                            Participated in various courses recognized by the University of Cologne.
-                        </p>
+                        <div class="timeline-description">
+                            <ul>
+                                <li>Participated in various academic courses recognized by the University of Cologne</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
+
                 <div class="timeline-item">
                     <div class="timeline-card">
                         <div class="timeline-header">
                             <div>
                                 <h3 class="timeline-title">Student Exchange</h3>
-                                <p class="timeline-subtitle">World Foreign Language Middle School, Shanghai, China</p>
+                                <p class="timeline-location">World Foreign Language Middle School · Shanghai, China</p>
                             </div>
-                            <span class="timeline-date">Oct 2014</span>
+                            <span class="timeline-date">Oct 2014 (2 weeks)</span>
                         </div>
-                        <p class="timeline-description">
-                            Two-week stay with a Chinese family attending school life, followed by a cultural trip to Hangzhou and Zhejiang Province.
-                        </p>
+                        <div class="timeline-description">
+                            <ul>
+                                <li>Stayed with a Chinese host family and attended local school</li>
+                                <li>Participated in cultural trip to Hangzhou and Zhejiang Province</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
+
             </div>
         </section>
+            
     </main>
 
     <!-- Footer -->
     <footer>
-        <p>© 2026 Joe Back • Last updated: February 22, 2026</p>
+        <p>© 2026 Joe Back • Last updated: February 24, 2026</p>
     </footer>
 
     <!-- JavaScript for Theme Switching -->
